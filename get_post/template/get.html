@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information · GET form</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+</head>
+<body>
+    <div class="form-container">
+        <h1>📋 Student Information</h1>
+        <p class="subhead">Fill in your details — form uses <code>GET</code> method</p>
+        <form method="get" action="">
+            <!-- Name -->
+            <div class="form-group">
+                <label for="id_name">Full name <span class="required">*</span></label>
+                <input type="text" id="id_name" name="name" placeholder="e.g. Sadia Rahman" required>
+            </div>
+
+            <!-- Student ID -->
+            <div class="form-group">
+                <label for="id_student_id">Student ID <span class="required">*</span></label>
+                <input type="text" id="id_student_id" name="student_id" placeholder="e.g. 2024-12345" required>
+            </div>
+
+            <!-- University name -->
+            <div class="form-group">
+                <label for="id_university">University <span class="required">*</span></label>
+                <input type="text" id="id_university" name="university" placeholder="e.g. University of Dhaka" required>
+            </div>
+
+            <!-- Passing year + dropdown -->
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="id_passing_year">Passing year <span class="required">*</span></label>
+                    <select id="id_passing_year" name="passing_year" required>
+                        <option value="" disabled selected>-- select year --</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                    </select>
+                </div>
+
+                <!-- Degree / program -->
+                <div class="form-group half">
+                    <label for="id_degree">Degree</label>
+                    <select id="id_degree" name="degree">
+                        <option value="" disabled selected>-- optional --</option>
+                        <option value="BSc">B.Sc.</option>
+                        <option value="MSc">M.Sc.</option>
+                        <option value="BA">B.A.</option>
+                        <option value="MA">M.A.</option>
+                        <option value="PhD">Ph.D.</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Department / major (other related info) -->
+            <div class="form-group">
+                <label for="id_department">Department / Major</label>
+                <input type="text" id="id_department" name="department" placeholder="e.g. Computer Science">
+            </div>
+
+            <!-- CGPA / result (other related info) -->
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="id_cgpa">CGPA / Result</label>
+                    <input type="text" id="id_cgpa" name="cgpa" placeholder="e.g. 3.85">
+                </div>
+                <div class="form-group half">
+                    <label for="id_email">Email (optional)</label>
+                    <input type="email" id="id_email" name="email" placeholder="student@example.com">
+                </div>
+            </div>
+
+            <!-- Additional comments (other related info) -->
+            <div class="form-group">
+                <label for="id_comments">Additional info</label>
+                <textarea id="id_comments" name="comments" rows="2" placeholder="Any other details..."></textarea>
+            </div>
+
+            <!-- Submit + reset -->
+            <div class="form-actions">
+                <button type="submit" class="btn-submit">Submit (GET)</button>
+                <button type="reset" class="btn-reset">Reset</button>
+            </div>
+        </form>
+        output
+        <input type='text' value="{{output}}"/>
+    </div>
+</body>
+</html>
